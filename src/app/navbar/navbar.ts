@@ -13,4 +13,7 @@ import {RouterLink} from '@angular/router';
 })
 export class Navbar {
 
+  protected readonly RouterLink = RouterLink;
+  protected readonly screenLeft = screenLeft;
+  protected readonly Component = Component;
 }
