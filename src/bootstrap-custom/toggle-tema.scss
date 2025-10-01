@@ -1,0 +1,8 @@
+.form-check-input-secondary:checked {
+  background-color: var(--bs-secondary) !important;
+  border-color: var(--bs-secondary) !important;
+}
+
+.form-check-input-secondary:focus {
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-secondary-rgb), 0.5) !important;
+}

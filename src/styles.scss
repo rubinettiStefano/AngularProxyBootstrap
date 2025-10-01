@@ -1,0 +1,15 @@
+//esempio sovrascrittura standard bootstrap
+//$primary : #0a8026;
+//$secondary : black;
+//
+//$body-bg-dark: #090c29;
+//$btn-font-family:   "Comic Sans MS", cursive, sans-serif;
+
+
+//IMPORT SEMPRE DOPO SOVRASCRITTURA
+@import "bootstrap/scss/bootstrap";
+
+
+//IMPORT DI AGGIUNTE NOSTRE, DOPO IMPORT BOOTSTRAP
+//@import "bootstrap-custom/esempio-bottone-custom";
+@import "bootstrap-custom/toggle-tema";
