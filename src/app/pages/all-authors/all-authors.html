@@ -1,3 +1,28 @@
-<!--TODO 4 - Fare tabella come per i libri-->
+<!-- - Fare tabella come per i libri-->
 
-<p>all-authors works!</p>
+<div class="container mb-3 mt-3">
+  <div class="input-group">
+    <input type="text" [(ngModel)]="authorName" class="form-control" placeholder="Filtra gli autori" aria-label="Filtro" />
+    <button class="btn btn-outline-secondary" (click)="authorName=''" type="button">Reset</button>
+  </div>
+</div>
+
+<div class="container">
+  <table class="table table-striped table-hover">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number of books</th>
+      <th>Date of birth</th>
+      <th>Nationality</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (b of serv.getByAuthorName(authorName); track $index) {
+        <tr Autore [author]="b"></tr>
+      }
+    </tbody>
+  </table>
+</div>
+

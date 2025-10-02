@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import {Maps} from '../../parts/maps/maps';
 
 @Component({
   selector: 'app-homepage',
-  imports: [],
+  imports: [
+    Maps
+  ],
   templateUrl: './homepage.html',
   styleUrl: './homepage.css'
 })

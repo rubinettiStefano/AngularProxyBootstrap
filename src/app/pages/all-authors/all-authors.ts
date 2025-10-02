@@ -1,12 +1,26 @@
 import { Component } from '@angular/core';
+import {AuthorService} from '../../../services/author-service';
+import {BookRow} from '../../parts/book-row/book-row';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AuthorRow} from '../../parts/author-row/author-row';
 
 @Component({
   selector: 'app-all-authors',
-  imports: [],
+  imports: [
+    BookRow,
+    ReactiveFormsModule,
+    FormsModule,
+    AuthorRow
+  ],
   templateUrl: './all-authors.html',
   styleUrl: './all-authors.css'
 })
 export class AllAuthors
 {
-  //TODO 3 - Iniettare servizio tramite costruttore
+
+  constructor(public serv:AuthorService) {
+
+  }
+
+  authorName:string = ""
 }
