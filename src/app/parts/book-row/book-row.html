@@ -1,0 +1,13 @@
+<td>{{ book?.title }}</td>
+<td>{{ book?.authorName }}</td>
+<td>{{ book?.year }}</td>
+<td>{{ book?.pages }}</td>
+<td>€ {{ book?.price!.toFixed(2) }}</td>
+<td>
+  <input type="checkbox" [checked]="book?.inStock" disabled />
+</td>
+<td>
+  <button class="btn btn-danger btn-sm" (click)="serv.deleteById(book!.id)">
+    <i class="bi bi-trash"></i>
+  </button>
+</td>
