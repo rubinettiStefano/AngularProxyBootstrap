@@ -7,7 +7,7 @@ import {BookForm} from './pages/book-form/book-form';
 
 export const routes: Routes = [
   {path:"",component:Homepage},
-  {path:"books",component:AllBooks},
+  {path:"books/:authorName",component:AllBooks},
   {path:"authors",component:AllAuthors},
   {path:"form-author",component:AuthorForm},
   //form-book/{author_id}

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {GetBookDto} from '../model/GetBookDto';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class BookService
   //1) punto dove salvare
   books:GetBookDto[] = [];
 
-  constructor(private http:HttpClient)
+  constructor(private http:HttpClient,private router:Router)
   {
     this.fillArray();
   }
@@ -38,4 +39,14 @@ export class BookService
     this.http.delete("/api/books/"+id).subscribe(()=>this.fillArray());
   }
 
+  insertBook(book: PostBookDto)
+  {
+    this.http.post<GetBookDto>("/api/books",book).subscribe(
+      (nuovoLibroSalvato)=> {
+        this.fillArray();
+
+
+        this.router.navigate(["/books", nuovoLibroSalvato.authorName])
+      })
+  }
 }

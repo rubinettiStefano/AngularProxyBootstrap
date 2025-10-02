@@ -1,9 +1,12 @@
 import {Component, Input} from '@angular/core';
 import {BookService} from '../../../services/book-service';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-book-form',
-  imports: [],
+  imports: [
+    FormsModule
+  ],
   templateUrl: './book-form.html',
   styleUrl: './book-form.css'
 })
@@ -12,6 +15,8 @@ export class BookForm
 
   @Input() author_id:string="";
   //TODO A1 - Creare proprietà book con model creato a partire dal dto di input in backend
+  book:PostBookDto = {author_id:"",numberOfCopies:0,pages:0,price:0,title:"",year:0}
+
 
   constructor(public serv:BookService) {
 
