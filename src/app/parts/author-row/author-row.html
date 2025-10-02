@@ -1,1 +1,10 @@
-<!--TODO 7 - impostare singola riga con cancellazione, come book -->
+
+<td>{{ author?.fullName }}</td>
+<td>{{ author?.numberOfBooks }}</td>
+<td>{{ author?.dob }}</td>
+<td>{{ author?.nationality }}</td>
+<td>
+  <button class="btn btn-danger btn-sm" (click)="serv.deleteAuthorById(author!.id)">
+    <i class="bi bi-trash"></i>
+  </button>
+</td>
