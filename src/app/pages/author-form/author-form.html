@@ -1,0 +1,17 @@
+<div class="container mt-4">
+
+
+  <div class="mb-3">
+  <label  class="form-label">Full Name</label>
+  <input type="text" class="form-control" [(ngModel)]="author.fullName" >
+</div>
+<div class="mb-3">
+  <label  class="form-label">Nationality</label>
+  <input type="text" class="form-control" [(ngModel)]="author.nationality" >
+</div>
+<div class="mb-3">
+  <label  class="form-label">Dob</label>
+  <input type="date" class="form-control" [(ngModel)]="author.dob" >
+</div>
+<button  class="btn btn-primary" (click)="serv.insertAuthor(author)">Create</button>
+</div>

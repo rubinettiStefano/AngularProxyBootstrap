@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import {GetAuthorDto} from '../model/GetAuthorDto';
 import {HttpClient} from '@angular/common/http';
 import {GetBookDto} from '../model/GetBookDto';
+import {PostAuthorDto} from '../model/PostAuthorDto';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,7 @@ export class AuthorService
 
   authors:GetAuthorDto[] = []
 
-  constructor(private http:HttpClient)
+  constructor(private http:HttpClient,private router:Router)
   {
     this.fillArray();
   }
@@ -34,5 +36,15 @@ export class AuthorService
     this.http.delete("/api/authors/"+id).subscribe(()=>this.fillArray());
   }
 
+  insertAuthor(author:PostAuthorDto)
+  {
+    this.http.post("api/authors",author)
+      .subscribe(()=>
+      {
+        this.fillArray();
+        this.router.navigate(["/authors"]);//cambia uri in /authors, uguale a premere un link
 
+
+      });
+  }
 }

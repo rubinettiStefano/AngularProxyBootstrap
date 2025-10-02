@@ -4,6 +4,7 @@
   <div class="input-group">
     <input type="text" [(ngModel)]="authorName" class="form-control" placeholder="Filtra gli autori" aria-label="Filtro" />
     <button class="btn btn-outline-secondary" (click)="authorName=''" type="button">Reset</button>
+    <button class="ms-2 btn btn-outline-success"  [routerLink]="'/form-author'"><i style="font-size: 1.5rem" class="bi bi-plus-square"></i></button>
   </div>
 </div>
 
@@ -16,6 +17,7 @@
       <th>Date of birth</th>
       <th>Nationality</th>
       <th>Delete</th>
+      <th>Add Book</th>
     </tr>
     </thead>
     <tbody>
